@@ -27,7 +27,7 @@ This project is built across the term.
 - [ ] **Unit 4 (Weeks 8-10):** Putting It All Together - Final polishing, integrating knowledge checks, and live deployment.
 
 ## Live Site
-https://reyesrhyahaustrie.github.io/my-profile
+https://reyesrhyahaustrie.github.io/mms-171-text-in-multimedia
 
 ## Academic Integrity Disclaimer
 This project is developed solely for academic purposes in compliance with UPOU's academic integrity and anti-plagiarism guidelines. All external assets, tools, and code references (e.g., W3Schools, W3C Markup Validator, Google Fonts) are properly attributed.
