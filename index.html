@@ -1,48 +1,49 @@
 <!-- 
 ========================================================================
 University of the Philippines Open University
-MMS 171 - Module 3: HTML Basics — Giving Text Structure
+MMS 171 - Module 4: XHTML and HTML5
 STUDENT: REYES, Rhyah Austrie S.
 
-A basic HTML skeleton for a profile page.
-This includes a body, headings, paragraphs, a list, and links which also 
+A basic HTML skeleton for a profile page following XHTML syntax.
+This includes the body, headings, paragraphs, a list, and links which also 
 uses semantic elements including <header>, <main>, <section>, and <footer>.
+It now has a Passion Projects section as an update for Module 4 Activity.
 ========================================================================
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rhyah Austrie Reyes | Profile</title>
 </head>
 <body>
 
+    <!-- Section 1: Name and Tagline -->
+    <header>
+        <h1>Rhyah Austrie Reyes</h1>
+        <h2>Multimedia Studies Student &amp; Tech Enthusiast</h2>
+        <p>A student at UPOU in her senior year who loves learning new things and turning ideas into making an impact.</p>
+        <p>[ Image Placeholder ]</p>
+    </header>
+
     <main>
         
-        <!-- Section 1: Name and Tagline using header, headings, and a paragraph -->
-        <header>
-            <h1>Rhyah Austrie Reyes</h1>
-            <h2>Multimedia Studies Student & Tech Enthusiast</h2>
-            <p>A student at UPOU in her senior year who loves learning new things and turning ideas into making an impact.</p>
-            <p>[ Image Placeholder ]</p>
-        </header>
-
-        <!-- Section 2: About Me using section, headings, and paragraphs -->
+        <!-- Section 2: About Me -->
         <section>
             <h2>About Me</h2>
             <p>I'm passionate about finance, tech, and everything multimedia.</p>
             <p>You want to learn how to invest? I am the person who you can run to!</p>
         </section>
 
-        <!-- Section 3: Things I Love using section, headings, and a list -->
+        <!-- Section 3: Things I Love -->
         <section>
             <h2>Things I Love</h2>
             <ul>
                 <li>
                     <figure>
                         <p>[ Image Placeholder ]</p>
-                        <figcaption>01 | anything finance (investing & trading).</figcaption>
+                        <figcaption>01 | anything finance (investing &amp; trading).</figcaption>
                     </figure>
                 </li>
                 <li>
@@ -54,21 +55,29 @@ uses semantic elements including <header>, <main>, <section>, and <footer>.
                 <li>
                     <figure>
                         <p>[ Image Placeholder ]</p>
-                        <figcaption>03 | iced matcha & any pasta recipe.</figcaption>
+                        <figcaption>03 | iced matcha &amp; any pasta recipe.</figcaption>
                     </figure>
                 </li>
             </ul>
         </section>
 
-        <!-- Section 4: Contact using footer, headings, paragraphs, and links -->
-        <footer>
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:reyesrhyahaustrie@gmail.com">reyesrhyahaustrie@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/reyesrhyahaustrie" target="_blank">github.com/reyesrhyahaustrie</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank">linkedin.com/in/rhyahaustriereyes</a></p>
-        </footer>
+        <!-- Section 4: Passion Projects -->
+        <section>
+            <h2>Passion Projects</h2>
+            <h3>NovaTech Revenue Intelligence</h3>
+            <p>[ Image Placeholder - Dashboard UI ]</p>
+            <p>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</p>
+        </section>
 
     </main>
+    
+    <!-- Section 5: Contact -->
+    <footer>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:reyesrhyahaustrie@gmail.com">reyesrhyahaustrie@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/reyesrhyahaustrie" target="_blank">github.com/reyesrhyahaustrie</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank">linkedin.com/in/rhyahaustriereyes</a></p>
+    </footer>
 
 </body>
 </html>
