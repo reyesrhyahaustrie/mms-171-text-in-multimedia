@@ -6,8 +6,8 @@ MMS 171 - Module 5: Metalanguages, SGML, & XML
 STUDENT: REYES, Rhyah Austrie S.
 
 XML document to list three passion projects. 
-This serves as the activity for Module 5 with a 
-single root element <passionProjects> and closed tags.
+This serves as the activity for Module 5 with a single 
+root element <passionProjects> and properly closed tags.
 ========================================================================
 -->
 <passionProjects>
