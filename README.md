@@ -20,12 +20,12 @@ This repository contains files for **MMS 171: Text in Multimedia** at the Univer
 ## Course Progression Tracker
 This project is built across the term. 
 
-- [x] **Unit 1 (Module 2):** Text in Action - Wireframing, typography planning, and layout sketching.
-- [x] **Unit 2 (Module 3):** HTML Basics - Giving text structure (Semantic HTML).
-- [x] **Unit 2 (Modules 4):** XHTML & HTML5.
-- [ ] **Unit 2 (Modules 5):** Metalanguages.
-- [ ] **Unit 3 (Modules 6-7):** Style - CSS and Digital Typography.
-- [ ] **Unit 4 (Weeks 8-10):** Putting It All Together - Final polishing, integrating knowledge checks, and live deployment.
+- [x] **Unit 1 (Module 2):** Text in Action - Wireframing, typography planning, and layout sketching
+- [x] **Unit 2 (Module 3):** HTML Basics - Giving text structure (Semantic HTML)
+- [x] **Unit 2 (Module 4):** XHTML & HTML5
+- [ ] **Unit 2 (Modules 5):** Metalanguages, SGML and XML
+- [ ] **Unit 3 (Modules 6-7):** Style - CSS and Digital Typography
+- [ ] **Unit 4 (Weeks 8-10):** Putting It All Together - Final polishing, integrating knowledge checks, and live deployment
 
 ## Live Site
 https://reyesrhyahaustrie.github.io/mms-171-text-in-multimedia

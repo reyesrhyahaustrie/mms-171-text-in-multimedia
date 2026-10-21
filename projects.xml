@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+========================================================================
+University of the Philippines Open University
+MMS 171 - Module 5: Metalanguages, SGML, & XML
+STUDENT: REYES, Rhyah Austrie S.
+
+XML document to list three passion projects. 
+This serves as the activity for Module 5 with a 
+single root element <passionProjects> and closed tags.
+========================================================================
+-->
+<passionProjects>
+    
+    <project>
+        <title>Visual Profile Video Project</title>
+        <description>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</description>
+        <date>October 2026</date>
+    </project>
+
+    <project>
+        <title>NovaTech Revenue Intelligence Dashboard</title>
+        <description>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</description>
+        <date>September 2026</date>
+    </project>
+
+    <project>
+        <title>Customer Churn Prediction Analysis</title>
+        <description>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</description>
+        <date>April 2026</date>
+    </project>
+
+</passionProjects>
