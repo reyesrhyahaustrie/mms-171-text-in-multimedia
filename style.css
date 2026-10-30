@@ -208,6 +208,11 @@ p, figcaption {
     border: 1px solid rgba(0,0,0,0.03);
 }
 
+/* Card padding already spaces the title, so drop the extra top margin */
+.apple-card h3 {
+    margin-top: 0;
+}
+
 /* List & Image Styling (Grid Layout) */
 .favorites-list {
     list-style-type: none;
@@ -219,7 +224,7 @@ p, figcaption {
 
 .favorites-list li {
     background: #ffffff;
-    padding: 1.5em;
+    padding: 1rem;
     border-radius: 18px;
     border: 1px solid rgba(0, 0, 0, 0.03);
     box-shadow: 0 4px 14px rgba(0,0,0,0.03);
@@ -229,6 +234,11 @@ p, figcaption {
 
 .favorites-list li:hover {
     transform: translateY(-4px);
+}
+
+/* Remove the browser's default 40px side margin on figure so photos fill the card */
+.favorites-list figure {
+    margin: 0;
 }
 
 /* Force images to fill their container nicely */
@@ -249,6 +259,17 @@ p, figcaption {
     display: block;
     margin: 0 auto 1.5rem auto;
     border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* YouTube embed: full card width, 16:9 like a standard video */
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    border: 0;
+    border-radius: 12px;
 }
 
 .pdf-frame {
