@@ -37,7 +37,7 @@ header, section, footer {
 /* Primary Heading Styling */
 h1 {
     font-size: 3.6rem; 
-    color: #0066cc; 
+    color: #0052a3; 
     letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
 }
@@ -110,7 +110,7 @@ p, figcaption {
 }
 
 .nav-links li a:hover {
-    color: #0066cc;
+    color: #0052a3;
 }
 
 /* Box Model: Padding, Border, and Margins */
@@ -152,7 +152,7 @@ p, figcaption {
     padding: 1.5rem 0 0 0;
     background-color: #ffffff;
     border-radius: 50% 50% 15px 15px;
-    box-shadow: 0 24px 40px -12px rgba(0, 102, 204, 0.45);
+    box-shadow: 0 24px 40px -12px rgba(0, 82, 163, 0.45);
     object-fit: contain;
     object-position: bottom;
 }
@@ -326,7 +326,7 @@ p, figcaption {
 
 /* Links stay regular weight, underline on hover */
 .site-footer a {
-    color: #0066cc;
+    color: #0052a3;
     font-weight: 400;
     text-decoration: none;
 }
@@ -360,16 +360,38 @@ p, figcaption {
         justify-content: center;
     }
 
+    /* Center section titles and body text to match the centered bio above */
     .section-title {
         width: 100%;
     }
 
-    .section-body {
-        width: 100%;
+    .section-title h2 {
+        font-size: 1.8rem;
+        text-align: center;
     }
 
+    .section-body {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Smaller type for small screens */
     h1 {
-        font-size: 3rem;
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p, figcaption {
+        font-size: 1rem;
+    }
+
+    /* Keep longer project descriptions left-aligned inside their cards for readability */
+    .apple-card {
+        padding: 1.5rem;
+        text-align: left;
     }
 
     .profile-pic {
