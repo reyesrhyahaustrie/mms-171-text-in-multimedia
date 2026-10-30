@@ -11,6 +11,10 @@ colors, Box Model spacing, Flexbox layout, and responsive media queries.
 */
 
 /* Base Styles & Typography */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
     line-height: 1.6;
@@ -23,6 +27,11 @@ body {
 h1, h2, h3 {
     line-height: 1.2;
     font-weight: 600;
+}
+
+/* Scroll margin so sticky nav doesn't cover titles when clicked */
+header, section, footer {
+    scroll-margin-top: 80px; 
 }
 
 /* Primary Heading Styling */
@@ -68,22 +77,15 @@ p, figcaption {
 }
 
 .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #1d1d1f;
-}
-
-.nav-icon {
-    color: #0066cc;
-    font-size: 1.5rem;
+    letter-spacing: -0.02em;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
 }
@@ -95,7 +97,7 @@ p, figcaption {
     text-decoration: none;
     color: #1d1d1f;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
@@ -131,13 +133,14 @@ p, figcaption {
     min-width: 300px;
 }
 
-/* Profile Picture Styling */
+/* Profile Picture Styling (Window/Arch Shape applied) */
 .profile-pic {
-    width: 450px; 
-    max-width: 50%;
+    width: 400px; 
+    max-width: 40%;
     height: auto;
-    border-radius: 24px;
+    border-radius: 50% 50% 15px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    object-fit: cover;
 }
 
 /* 2-Column Section Layout */
@@ -282,7 +285,7 @@ p, figcaption {
 }
 
 /* Media Query for Responsive Design (Mobile) */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .profile-container {
         flex-direction: column-reverse;
         text-align: center;
@@ -294,6 +297,16 @@ p, figcaption {
         flex-direction: column;
         gap: 1.5rem;
         padding: 3rem 1rem;
+    }
+    
+    .top-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .section-title {

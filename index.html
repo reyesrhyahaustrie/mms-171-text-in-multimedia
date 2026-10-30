@@ -23,25 +23,26 @@ structural classes for Flexbox layout, and removed inline widths.
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Emoji Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar with Page Links -->
     <nav class="top-nav">
         <div class="nav-brand">
             <span class="material-icons-round nav-icon">blur_on</span>
-            <strong>Rhyah.</strong>
         </div>
         <ul class="nav-links">
-            <li><a href="mailto:reyesrhyahaustrie@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a></li>
-            <li><a href="https://github.com/reyesrhyahaustrie" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
-            <li><a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#favorites">Things I Love</a></li>
+            <li><a href="#projects">Passion Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Section 1: Name and Tagline -->
-    <header class="profile-container">
+    <header id="home" class="profile-container">
         <div class="bio-text">
             <h1>Rhyah Austrie Reyes</h1>
             <h2>Multimedia Studies Student &amp; Tech Enthusiast</h2>
@@ -53,7 +54,7 @@ structural classes for Flexbox layout, and removed inline widths.
     <main class="main-content">
         
         <!-- Section 2: About Me -->
-        <section class="apple-section">
+        <section id="about" class="apple-section">
             <div class="section-title">
                 <h2>About Me.</h2>
             </div>
@@ -64,7 +65,7 @@ structural classes for Flexbox layout, and removed inline widths.
         </section>
 
         <!-- Section 3: Things I Love -->
-        <section class="apple-section stacked">
+        <section id="favorites" class="apple-section stacked">
             <div class="section-title">
                 <h2>Things I Love.</h2>
             </div>
@@ -93,9 +94,9 @@ structural classes for Flexbox layout, and removed inline widths.
         </section>
 
     <!-- Section 4: Passion Projects -->
-        <section class="apple-section">
+        <section id="projects" class="apple-section">
             <div class="section-title">
-                <h2>Passion<br>Projects.</h2>
+                <h2>Passion Projects.</h2>
             </div>
             <div class="section-body">
                 
@@ -123,7 +124,7 @@ structural classes for Flexbox layout, and removed inline widths.
     </main>
     
     <!-- Section 5: Contact -->
-    <footer class="site-footer">
+    <footer id="contact" class="site-footer">
         <span class="material-icons-round footer-icon">blur_on</span>
         <h2>Contact</h2>
         <p><i class="fa-regular fa-envelope"></i> Email: <a href="mailto:reyesrhyahaustrie@gmail.com">reyesrhyahaustrie@gmail.com</a></p>
