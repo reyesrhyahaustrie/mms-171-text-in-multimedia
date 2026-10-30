@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: #1d1d1f;
     background-color: #f5f5f7;
@@ -67,7 +67,6 @@ p, figcaption {
 .top-nav {
     background-color: rgba(245, 245, 247, 0.6);
     backdrop-filter: saturate(180%) blur(24px);
-    -webkit-backdrop-filter: saturate(180%) blur(24px);
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 1rem 5%;
@@ -132,9 +131,10 @@ p, figcaption {
     margin: 0 auto;
     max-width: 1040px;
     width: 90%;
-    min-height: 60vh; 
+    min-height: 60vh;
     box-sizing: border-box;
-    text-align: left; 
+    text-align: left;
+    border-bottom: 1px solid #d2d2d7; /* Divider before About Me, same as section dividers */
 }
 
 .bio-text {
@@ -261,12 +261,12 @@ p, figcaption {
 }
 
 /* Footer Styling */
-/* Flexbox Footer: logo on the left, contact details on the right */
+/* Flexbox Footer: logo on the left, contact details right beside it */
 .site-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 3rem;
+    gap: 2.5rem;
     max-width: 1040px;
     width: 90%;
     margin: 0 auto;
@@ -281,7 +281,7 @@ p, figcaption {
 }
 
 .footer-contact {
-    text-align: right;
+    text-align: left;
 }
 
 .site-footer h2 {
@@ -290,17 +290,23 @@ p, figcaption {
 }
 
 /* Icons and Text Alignment in Footer */
+/* Contact rows: icon + label + link */
 .site-footer p {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     gap: 0.5rem;
     margin: 0.5rem 0;
 }
 
+.site-footer p i {
+    width: 1.2em;
+    text-align: center;
+}
+
+/* Links stay regular weight, underline on hover */
 .site-footer a {
     color: #0066cc;
-    font-weight: 500;
+    font-weight: 400;
     text-decoration: none;
 }
 
