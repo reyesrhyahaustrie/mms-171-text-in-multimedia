@@ -15,8 +15,30 @@ structural classes for Flexbox layout, and removed inline widths.
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rhyah Austrie Reyes | Profile</title>
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- Google Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <!-- FontAwesome CDN for Brand Icons (GitHub, LinkedIn) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Emoji Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="material-icons-round nav-icon">blur_on</span>
+            <strong>Rhyah.</strong>
+        </div>
+        <ul class="nav-links">
+            <li><a href="mailto:reyesrhyahaustrie@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a></li>
+            <li><a href="https://github.com/reyesrhyahaustrie" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+    </nav>
 
     <!-- Section 1: Name and Tagline -->
     <header class="profile-container">
@@ -31,62 +53,82 @@ structural classes for Flexbox layout, and removed inline widths.
     <main class="main-content">
         
         <!-- Section 2: About Me -->
-        <section class="content-box">
-            <h2>About Me</h2>
-            <p>I'm passionate about finance, tech, and everything multimedia.</p>
-            <p>You want to learn how to invest? I am the person who you can run to!</p>
+        <section class="apple-section">
+            <div class="section-title">
+                <h2>About Me.</h2>
+            </div>
+            <div class="section-body">
+                <p>I'm passionate about finance, tech, and everything multimedia.</p>
+                <p>You want to learn how to invest? I am the person who you can run to!</p>
+            </div>
         </section>
 
         <!-- Section 3: Things I Love -->
-        <section class="content-box">
-            <h2>Things I Love</h2>
-            <ul class="favorites-list">
-                <li>
-                    <figure>
-                        <img src="assets/finance.png" alt="Investing Club" class="responsive-img"/>
-                        <figcaption>01 | anything finance (investing &amp; trading).</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img src="assets/music.png" alt="Spotify Profile" class="responsive-img"/>
-                        <figcaption>02 | pop, OPM, K-Pop, and indie songs.</figcaption>
-                    </figure>
-                </li>
-                <li>
-                    <figure>
-                        <img src="assets/matcha.png" alt="Matcha Iced Cream and Drink" class="responsive-img"/>
-                        <figcaption>03 | iced matcha &amp; any pasta recipe.</figcaption>
-                    </figure>
-                </li>
-            </ul>
+        <section class="apple-section stacked">
+            <div class="section-title">
+                <h2>Things I Love.</h2>
+            </div>
+            <div class="section-body">
+                <ul class="favorites-list">
+                    <li>
+                        <figure>
+                            <img src="assets/finance.png" alt="Investing Club" class="responsive-img"/>
+                            <figcaption>01 | anything finance (investing &amp; trading).</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="assets/music.png" alt="Spotify Profile" class="responsive-img"/>
+                            <figcaption>02 | pop, OPM, K-Pop, and indie songs.</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="assets/matcha.png" alt="Matcha Iced Cream and Drink" class="responsive-img"/>
+                            <figcaption>03 | iced matcha &amp; any pasta recipe.</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
         </section>
 
     <!-- Section 4: Passion Projects -->
-        <section>
-            <h2>Passion Projects</h2>
-            
-            <h3>Visual Profile Video Project</h3>
-            <img src="assets/video-placeholder.jpg" alt="Visual Profile Video Thumbnail" width="600"/>
-            <p>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</p>
+        <section class="apple-section">
+            <div class="section-title">
+                <h2>Passion<br>Projects.</h2>
+            </div>
+            <div class="section-body">
+                
+                <div class="project-item apple-card">
+                    <h3>Visual Profile Video Project</h3>
+                    <img src="assets/video-placeholder.jpg" alt="Visual Profile Video Thumbnail" class="project-img"/>
+                    <p>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</p>
+                </div>
 
-            <h3>NovaTech Revenue Intelligence Dashboard</h3>
-            <img src="assets/dashboard-data.png" alt="NovaTech Dashboard Backend Data" width="625"/>
-            <p>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</p>
+                <div class="project-item apple-card">
+                    <h3>NovaTech Revenue Intelligence Dashboard</h3>
+                    <img src="assets/dashboard-data.png" alt="NovaTech Dashboard Backend Data" class="project-img"/>
+                    <p>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</p>
+                </div>
 
-            <h3>Customer Churn Prediction Analysis</h3>
-            <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" width="600" height="400" allow="autoplay"></iframe>
-            <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
+                <div class="project-item apple-card">
+                    <h3>Customer Churn Prediction Analysis</h3>
+                    <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" class="pdf-frame" allow="autoplay"></iframe>
+                    <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
+                </div>
+
+            </div>
         </section>
 
     </main>
     
     <!-- Section 5: Contact -->
     <footer class="site-footer">
+        <span class="material-icons-round footer-icon">blur_on</span>
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:reyesrhyahaustrie@gmail.com">reyesrhyahaustrie@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/reyesrhyahaustrie" target="_blank">github.com/reyesrhyahaustrie</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank">linkedin.com/in/rhyahaustriereyes</a></p>
+        <p><i class="fa-regular fa-envelope"></i> Email: <a href="mailto:reyesrhyahaustrie@gmail.com">reyesrhyahaustrie@gmail.com</a></p>
+        <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/reyesrhyahaustrie" target="_blank">github.com/reyesrhyahaustrie</a></p>
+        <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank">linkedin.com/in/rhyahaustriereyes</a></p>
     </footer>
 
 </body>
