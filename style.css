@@ -15,7 +15,7 @@ Fonts are loaded in index.html. Sizes use rem so the text scales with browser zo
 ========================================================================
 */
 
-/* Typography tokens change the fonts in one place */
+/* Typography tokens: change the fonts in one place */
 :root {
     --font-heading: "Raleway", "Trebuchet MS", "Century Gothic", Arial, sans-serif;
     --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -83,6 +83,23 @@ p, figcaption {
 .bio-text p,
 .section-body p {
     max-width: 68ch;
+}
+
+/* Hero text block: even vertical rhythm and one clean left edge */
+.bio-text h1 {
+    margin: 0 0 0.75rem;
+    /* Large Raleway caps sit slightly right of smaller text; nudge back for optical alignment */
+    margin-left: -0.04em;
+}
+
+.bio-text h2 {
+    margin: 0 0 1.25rem;
+}
+
+/* Keep the intro no wider than the name so the block reads as one neat column */
+.bio-text p {
+    max-width: 32rem;
+    margin: 0;
 }
 
 /* Navigation Bar Styling */
@@ -403,6 +420,11 @@ p, figcaption {
     .section-body p {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* Hero is centered on mobile, so drop the desktop optical nudge */
+    .bio-text h1 {
+        margin-left: 0;
     }
 
     /* Smaller type for small screens (body never drops below 16px) */
