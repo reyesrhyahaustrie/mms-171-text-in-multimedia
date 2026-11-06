@@ -1,14 +1,25 @@
 /* 
 ========================================================================
 University of the Philippines Open University
-MMS 171 - Module 6: CSS
+MMS 171 - Module 7: Digital Typography
 STUDENT: REYES, Rhyah Austrie S.
 
 External CSS stylesheet for the personal profile page. 
-This file handles the visual presentation including typography, 
-colors, Box Model spacing, Flexbox layout, and responsive media queries.
+Has typography, colors, Box Model spacing, Flexbox/Grid layout,
+and responsive media queries.
+
+Module 7 Typography
+- Headings: Raleway (Google Font) -> Trebuchet MS -> Century Gothic -> Arial -> sans-serif
+- Body:     Inter   (Google Font) -> Helvetica Neue -> Helvetica -> Arial -> sans-serif
+Fonts are loaded in index.html. Sizes use rem so the text scales with browser zoom.
 ========================================================================
 */
+
+/* Typography tokens change the fonts in one place */
+:root {
+    --font-heading: "Raleway", "Trebuchet MS", "Century Gothic", Arial, sans-serif;
+    --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 /* Base Styles & Typography */
 html {
@@ -16,17 +27,22 @@ html {
 }
 
 body {
-    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    font-size: 1rem; /* 16px base, the accessible minimum for body text */
+    line-height: 1.6; /* within the recommended 1.4-1.6x leading */
     color: #1d1d1f;
     background-color: #f5f5f7;
     margin: 0;
     padding: 0;
 }
 
+/* Headings use the display font; body stays on the screen-optimized font */
 h1, h2, h3 {
+    font-family: var(--font-heading);
     line-height: 1.2;
     font-weight: 600;
+    /* Raleway defaults to old-style numerals; force lining numbers for clarity */
+    font-variant-numeric: lining-nums;
 }
 
 /* Scroll margin so sticky nav doesn't cover titles when clicked */
@@ -37,6 +53,7 @@ header, section, footer {
 /* Primary Heading Styling */
 h1 {
     font-size: 3.6rem; 
+    font-weight: 700;
     color: #0052a3; 
     letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
@@ -60,6 +77,12 @@ h3 {
 p, figcaption {
     font-size: 1.05rem;
     color: #424245;
+}
+
+/* Keep paragraphs within a comfortable 45-75 character line length */
+.bio-text p,
+.section-body p {
+    max-width: 68ch;
 }
 
 /* Navigation Bar Styling */
@@ -375,7 +398,14 @@ p, figcaption {
         text-align: center;
     }
 
-    /* Smaller type for small screens */
+    /* Centered paragraphs stay centered as a block when capped */
+    .bio-text p,
+    .section-body p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Smaller type for small screens (body never drops below 16px) */
     h1 {
         font-size: 2.4rem;
     }
