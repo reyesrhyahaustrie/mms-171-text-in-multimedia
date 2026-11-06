@@ -9,6 +9,7 @@ Inter for body text) via <link> with preconnect hints. Font families
 and web-safe fallbacks which are declared in style.css.
 ========================================================================
 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +20,13 @@ and web-safe fallbacks which are declared in style.css.
     <!-- Google Fonts: Raleway (headings) + Inter (body). display=swap shows fallback text while fonts load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Raleway:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Raleway:wght@500;600;700&display=swap">
 
     <link rel="stylesheet" href="style.css" />
-    
+
     <!-- FontAwesome CDN for Brand Icons (GitHub, LinkedIn) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Logo Favicon -->
     <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
@@ -46,95 +47,113 @@ and web-safe fallbacks which are declared in style.css.
     </nav>
 
     <!-- Section 1: Name and Tagline -->
-    <header id="home" class="profile-container">
+    <header id="home" class="hero">
         <div class="bio-text">
             <h1>Rhyah Austrie Reyes</h1>
-            <h2>Multimedia Studies Student &amp; Tech Enthusiast</h2>
-            <p>A student at UPOU in her senior year who loves learning new things and turning ideas into making an impact.</p>
+            <!-- Wrapper sizes to the subtitle, so the intro paragraph wraps at the same right edge -->
+            <div class="bio-sub">
+                <h2>Multimedia Studies Student &amp; Tech Enthusiast</h2>
+                <p>A student at UPOU in her senior year who loves learning new things and turning ideas into making an impact.</p>
+            </div>
         </div>
         <img src="assets/profile.png" alt="Rhyah Austrie Reyes Profile Picture" class="profile-pic"/>
     </header>
 
     <main class="main-content">
-        
+
         <!-- Section 2: About Me -->
-        <section id="about" class="apple-section">
-            <div class="section-title">
-                <h2>About Me.</h2>
+        <section id="about" class="block">
+            <div class="block-head">
+                <h2 class="block-title">About Me.</h2>
             </div>
-            <div class="section-body">
-                <p>I'm passionate about finance, tech, and everything multimedia.</p>
+            <div class="card about-card">
+                <p class="lead">I'm passionate about finance, tech, and everything multimedia.</p>
                 <p>You want to learn how to invest? I am the person who you can run to!</p>
             </div>
         </section>
 
         <!-- Section 3: Things I Love -->
-        <section id="favorites" class="apple-section stacked">
-            <div class="section-title">
-                <h2>Things I Love.</h2>
+        <section id="favorites" class="block">
+            <div class="block-head">
+                <h2 class="block-title">Things I Love.</h2>
             </div>
-            <div class="section-body">
+            <div class="card">
                 <ul class="favorites-list">
                     <li>
                         <figure>
                             <img src="assets/finance.png" alt="Investing Club" class="responsive-img"/>
-                            <figcaption>01 | finance (investing &amp; trading).</figcaption>
+                            <figcaption><span class="fav-num">01</span> Finance (investing &amp; trading).</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
                             <img src="assets/music.png" alt="Spotify Profile" class="responsive-img"/>
-                            <figcaption>02 | streaming pop &amp; indie songs.</figcaption>
+                            <figcaption><span class="fav-num">02</span> Streaming pop &amp; indie songs.</figcaption>
                         </figure>
                     </li>
                     <li>
                         <figure>
                             <img src="assets/matcha.png" alt="Matcha Iced Cream and Drink" class="responsive-img"/>
-                            <figcaption>03 | any matcha goodies.</figcaption>
+                            <figcaption><span class="fav-num">03</span> Any matcha goodies.</figcaption>
                         </figure>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- Section 4: Passion Projects -->
-        <section id="projects" class="apple-section">
-            <div class="section-title">
-                <h2>Passion Projects.</h2>
+        <!-- Section 4: Passion Projects (accordion: only one open at a time via the shared name attribute) -->
+        <section id="projects" class="block">
+            <div class="block-head">
+                <h2 class="block-title">Passion Projects.</h2>
+                <a href="https://github.com/reyesrhyahaustrie" target="_blank" class="block-link">See more on GitHub &rsaquo;</a>
             </div>
-            <div class="section-body">
-                
-                <div class="project-item apple-card">
-                    <h3>Visual Profile Video Project</h3>
-                    <iframe src="https://www.youtube.com/embed/vEVywyuoaUs" title="Visual Profile Video Project" class="video-frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <p>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</p>
-                </div>
+            <div class="card projects-card">
 
-                <div class="project-item apple-card">
-                    <h3>NovaTech Revenue Intelligence Dashboard</h3>
-                    <img src="assets/dashboard-data.png" alt="NovaTech Dashboard Backend Data" class="project-img"/>
-                    <p>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</p>
-                </div>
+                <details class="project" name="project" open>
+                    <summary><h3>Visual Profile Video</h3></summary>
+                    <div class="project-body">
+                        <p>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</p>
+                    </div>
+                    <div class="project-media">
+                        <iframe src="https://www.youtube.com/embed/vEVywyuoaUs" title="Visual Profile Video Project" class="video-frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </details>
 
-                <div class="project-item apple-card">
-                    <h3>Customer Churn Prediction Analysis</h3>
-                    <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" title="Customer Churn Prediction Analysis report" class="pdf-frame" allow="autoplay"></iframe>
-                    <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
-                </div>
+                <details class="project" name="project">
+                    <summary><h3>NovaTech Revenue Dashboard</h3></summary>
+                    <div class="project-body">
+                        <p>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="assets/dashboard-data.png" alt="NovaTech Dashboard Backend Data" class="project-img"/>
+                    </div>
+                </details>
+
+                <details class="project" name="project">
+                    <summary><h3>Customer Churn Prediction</h3></summary>
+                    <div class="project-body">
+                        <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
+                    </div>
+                    <div class="project-media">
+                        <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" title="Customer Churn Prediction Analysis report" class="pdf-frame" allow="autoplay"></iframe>
+                    </div>
+                </details>
 
             </div>
         </section>
 
     </main>
-    
+
     <!-- Section 5: Contact -->
     <footer id="contact" class="site-footer">
-        <img src="assets/favicon.png" alt="Logo" class="footer-icon"/>
-        <div class="footer-contact">
-            <h2>Contact</h2>
-            <p><i class="fa-regular fa-envelope"></i> Email: <a href="mailto:reyesrhyahaustrie@gmail.com">reyesrhyahaustrie@gmail.com</a></p>
-            <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/reyesrhyahaustrie" target="_blank">github.com/reyesrhyahaustrie</a></p>
-            <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank">linkedin.com/in/rhyahaustriereyes</a></p>
+        <div class="card footer-card">
+            <img src="assets/favicon.png" alt="Logo" class="footer-icon"/>
+            <div class="footer-contact">
+                <h2>Contact.</h2>
+                <p><i class="fa-regular fa-envelope"></i> Email: <a href="mailto:reyesrhyahaustrie@gmail.com">reyesrhyahaustrie@gmail.com</a></p>
+                <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/reyesrhyahaustrie" target="_blank">github.com/reyesrhyahaustrie</a></p>
+                <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://linkedin.com/in/rhyahaustriereyes" target="_blank">linkedin.com/in/rhyahaustriereyes</a></p>
+            </div>
         </div>
     </footer>
 

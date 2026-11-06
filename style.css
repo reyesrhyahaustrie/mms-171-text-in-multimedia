@@ -11,14 +11,26 @@ and responsive media queries.
 Module 7 Typography
 - Headings: Raleway (Google Font) -> Trebuchet MS -> Century Gothic -> Arial -> sans-serif
 - Body:     Inter   (Google Font) -> Helvetica Neue -> Helvetica -> Arial -> sans-serif
-Fonts are loaded in index.html. Sizes use rem so the text scales with browser zoom.
+Fonts are loaded in index.html. Sizes use rem/clamp so text scales with
+browser zoom and screen width. Body text never drops below 16px.
 ========================================================================
 */
 
-/* Typography tokens: change the fonts in one place */
+/* Design tokens: fonts and colors defined once */
 :root {
     --font-heading: "Raleway", "Trebuchet MS", "Century Gothic", Arial, sans-serif;
     --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    --ink: #1d1d1f;        /* headings */
+    --graphite: #424245;   /* body text */
+    --muted: #6e6e73;      /* subtitles, captions */
+    --blue: #0052a3;       /* name, links */
+    --mist: #f5f5f7;       /* cards */
+    --line: #d2d2d7;       /* dividers */
+    --white: #ffffff;      /* page */
+
+    --card-radius: 28px;
+    --card-pad: clamp(1.75rem, 5vw, 4.5rem);
 }
 
 /* Base Styles & Typography */
@@ -28,100 +40,47 @@ html {
 
 body {
     font-family: var(--font-body);
-    font-size: 1rem; /* 16px base, the accessible minimum for body text */
-    line-height: 1.6; /* within the recommended 1.4-1.6x leading */
-    color: #1d1d1f;
-    background-color: #f5f5f7;
+    font-size: 1rem;      /* 16px base, the accessible minimum for body text */
+    line-height: 1.6;     /* within the recommended 1.4-1.6x leading */
+    color: var(--ink);
+    background-color: var(--white);
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Headings use the display font; body stays on the screen-optimized font */
 h1, h2, h3 {
     font-family: var(--font-heading);
-    line-height: 1.2;
+    line-height: 1.15;
     font-weight: 600;
+    color: var(--ink);
     /* Raleway defaults to old-style numerals; force lining numbers for clarity */
     font-variant-numeric: lining-nums;
 }
 
-/* Scroll margin so sticky nav doesn't cover titles when clicked */
-header, section, footer {
-    scroll-margin-top: 80px; 
-}
-
-/* Primary Heading Styling */
-h1 {
-    font-size: 3.6rem; 
-    font-weight: 700;
-    color: #0052a3; 
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-}
-
-h2 {
-    font-size: 1.6rem;
-    color: #424245;
-    margin-bottom: 1rem;
-    letter-spacing: -0.01em;
-}
-
-h3 {
-    font-size: 1.3rem;
-    color: #1d1d1f;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-}
-
 p, figcaption {
     font-size: 1.05rem;
-    color: #424245;
+    color: var(--graphite);
 }
 
-/* Keep paragraphs within a comfortable 45-75 character line length */
-.bio-text p,
-.section-body p {
-    max-width: 68ch;
+/* Scroll margin so the sticky nav doesn't cover titles when clicked */
+header, section, footer {
+    scroll-margin-top: 80px;
 }
 
-/* Hero text block: even vertical rhythm and one clean left edge */
-.bio-text h1 {
-    margin: 0 0 0.75rem;
-    /* Large Raleway caps sit slightly right of smaller text; nudge back for optical alignment */
-    margin-left: -0.04em;
-}
-
-.bio-text h2 {
-    margin: 0 0 1.25rem;
-}
-
-/* Keep the intro no wider than the name so the block reads as one neat column */
-.bio-text p {
-    max-width: 32rem;
-    margin: 0;
-}
-
-/* Navigation Bar Styling */
-/* Frosted-glass nav: see-through background, strong blur keeps text readable over content */
+/* Navigation Bar: frosted white glass */
 .top-nav {
-    background-color: rgba(245, 245, 247, 0.6);
-    backdrop-filter: saturate(180%) blur(24px);
-    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 1rem 5%;
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0.9rem 5%;
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.nav-brand {
-    font-size: 1.4rem;
-    color: #1d1d1f;
-    letter-spacing: -0.02em;
 }
 
 .nav-icon {
@@ -133,48 +92,45 @@ p, figcaption {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.75rem;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li a {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
     text-decoration: none;
-    color: #1d1d1f;
+    color: var(--ink);
     font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    opacity: 0.85;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .nav-links li a:hover {
-    color: #0052a3;
+    color: var(--blue);
+    opacity: 1;
 }
 
-/* Box Model: Padding, Border, and Margins */
-.main-content {
-    max-width: 1040px;
+/* Shared page width (Box Model) */
+.hero,
+.main-content,
+.site-footer {
+    max-width: 1120px;
     width: 90%;
     margin: 0 auto;
-    padding-bottom: 4rem;
 }
 
-/* Flexbox Layout for Header/Bio */
-.profile-container {
+/* Hero: Flexbox, text left, photo right */
+.hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4em;
-    padding: 5rem 0; 
-    margin: 0 auto;
-    max-width: 1040px;
-    width: 90%;
+    gap: 4rem;
+    padding: 6rem 0 4rem;
     min-height: 60vh;
     box-sizing: border-box;
-    text-align: left;
-    border-bottom: 1px solid #d2d2d7; /* Divider before About Me, same as section dividers */
+    border-bottom: 1px solid var(--line); /* Divider between the banner and About Me */
+    margin-bottom: 1.5rem;                /* Breathing room before the first section title */
 }
 
 .bio-text {
@@ -182,297 +138,403 @@ p, figcaption {
     min-width: 300px;
 }
 
-/* Profile Picture Styling (Window/Arch Shape applied) */
-/* Transparent photo fills the white arch's width; small top padding leaves headroom, blue glow underneath */
+.bio-text h1 {
+    /* Scales between 2.4rem and 4rem with the screen so the name never breaks awkwardly */
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 0.75rem;
+    /* Large Raleway caps sit slightly right of smaller text; nudge back for optical alignment */
+    margin-left: -0.04em;
+}
+
+/* Subtitle steps back (lighter, smaller, gray) so it supports the name instead of competing */
+.bio-text h2 {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-weight: 500;
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+}
+
+/* Subtitle sets the width; the paragraph wraps at the same right edge ("Enthusiast") */
+.bio-sub {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.bio-sub p {
+    width: 0;
+    min-width: 100%;
+    margin: 0;
+}
+
+/* Profile picture: arch window on a soft gray panel, blue glow underneath */
 .profile-pic {
     width: 400px;
     max-width: 40%;
     height: auto;
     box-sizing: border-box;
     padding: 1.5rem 0 0 0;
-    background-color: #ffffff;
-    border-radius: 50% 50% 15px 15px;
-    box-shadow: 0 24px 40px -12px rgba(0, 82, 163, 0.45);
+    background-color: var(--mist);
+    border-radius: 50% 50% 20px 20px;
+    box-shadow: 0 24px 40px -14px rgba(0, 82, 163, 0.4);
     object-fit: contain;
     object-position: bottom;
 }
 
-/* 2-Column Section Layout */
-.apple-section {
+/* Section blocks: big title on white, content inside a rounded card */
+.block {
+    padding: 2.5rem 0;
+}
+
+.block-head {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 3rem;
-    padding: 4rem 0;
-    border-bottom: 1px solid #d2d2d7; 
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    margin-bottom: 1.75rem;
 }
 
-/* Stacked Modifier for Specific Sections */
-.apple-section.stacked {
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.section-title {
-    width: 30%;
-    flex-shrink: 0;
-}
-
-.apple-section.stacked .section-title {
-    width: 100%;
-}
-
-.section-title h2 {
-    font-size: 2.2rem;
-    color: #1d1d1f;
+.block-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
     margin: 0;
-    text-align: left;
 }
 
-.section-body {
-    width: 70%;
-    text-align: left;
+.block-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 1.05rem;
 }
 
-.apple-section.stacked .section-body {
-    width: 100%;
+.block-link:hover {
+    text-decoration: underline;
 }
 
-/* Project Cards */
-.apple-card {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-    margin-bottom: 2rem;
-    border: 1px solid rgba(0,0,0,0.03);
+.card {
+    background: var(--mist);
+    border-radius: var(--card-radius);
+    padding: var(--card-pad);
 }
 
-/* Card padding already spaces the title, so drop the extra top margin */
-.apple-card h3 {
-    margin-top: 0;
+/* About Me: one large lead line, then supporting text */
+.about-card .lead {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    max-width: 30ch;
+    text-wrap: balance;
+    margin: 0 0 1rem;
 }
 
-/* List & Image Styling (Grid Layout) */
+.about-card p:last-child {
+    max-width: 60ch;
+    margin: 0;
+}
+
+/* Things I Love: Grid of white tiles inside the card */
 .favorites-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1.5em;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .favorites-list li {
-    background: #ffffff;
-    padding: 1rem;
-    border-radius: 18px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease;
-    text-align: center; 
+    background: var(--white);
+    padding: 1rem 1rem 1.25rem;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .favorites-list li:hover {
     transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
 }
 
-/* Remove the browser's default 40px side margin on figure so photos fill the card */
+/* Remove the browser's default 40px side margin on figure so photos fill the tile */
 .favorites-list figure {
     margin: 0;
 }
 
-/* Force images to fill their container nicely */
+.favorites-list figcaption {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0;
+}
+
+.fav-num {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--blue);
+}
+
 .responsive-img {
     width: 100%;
-    max-width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 14px;
     display: block;
-    margin: 0 auto 1rem auto; 
+    margin: 0 0 1rem;
 }
 
-/* Project Images & Iframe */
-.project-img {
-    max-width: 100%; 
-    height: auto;
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto 1.5rem auto;
-    border: 1px solid rgba(0,0,0,0.05);
+/* Passion Projects: accordion on the left, open item's media on the right */
+.projects-card {
+    position: relative;
+    min-height: 34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* YouTube embed: full card width, 16:9 like a standard video */
+.project {
+    width: 44%;
+    border-bottom: 1px solid var(--line);
+}
+
+.project:last-child {
+    border-bottom: 0;
+}
+
+.project summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.6rem 0;
+}
+
+/* Hide the default triangle marker */
+.project summary::-webkit-details-marker {
+    display: none;
+}
+
+.project summary h3 {
+    font-size: clamp(1.25rem, 1.9vw, 1.5rem);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Chevron: down when closed, up when open */
+.project summary::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-right: 2px solid var(--muted);
+    border-bottom: 2px solid var(--muted);
+    transform: translateY(-25%) rotate(45deg);
+    transition: transform 0.25s ease;
+}
+
+.project[open] summary::after {
+    transform: translateY(25%) rotate(-135deg);
+}
+
+.project summary:hover h3 {
+    color: var(--blue);
+}
+
+.project summary:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+.project-body p {
+    margin: 0 0 1.6rem;
+}
+
+/* Media of the open project floats in the right half of the card (desktop) */
+.project-media {
+    position: absolute;
+    top: 50%;
+    right: var(--card-pad);
+    width: calc(50% - var(--card-pad));
+    transform: translateY(-50%);
+}
+
 .video-frame {
     width: 100%;
     aspect-ratio: 16 / 9;
     height: auto;
     display: block;
-    margin: 0 auto 1.5rem auto;
     border: 0;
-    border-radius: 12px;
+    border-radius: 16px;
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
 }
 
 .pdf-frame {
-    width: 100%; 
-    height: 400px;
+    width: 100%;
+    height: 26rem;
     display: block;
-    margin: 0 auto 1.5rem auto;
-    border: 1px solid rgba(0,0,0,0.05);
-    border-radius: 12px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--white);
 }
 
-/* Footer Styling */
-/* Flexbox Footer: logo on the left, contact details right beside it */
+/* Footer: contact card */
 .site-footer {
+    padding: 2.5rem 0 4rem;
+}
+
+.footer-card {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: 2.5rem;
-    max-width: 1040px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 4em 0;
-    background-color: #f5f5f7;
 }
 
 .footer-icon {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     display: block;
 }
 
-.footer-contact {
-    text-align: left;
+.footer-contact h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
 }
 
-.site-footer h2 {
-    font-size: 1.2rem;
-    margin-top: 0;
-}
-
-/* Icons and Text Alignment in Footer */
 /* Contact rows: icon + label + link */
-.site-footer p {
+.footer-contact p {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 0.5rem 0;
+    margin: 0.4rem 0;
 }
 
-.site-footer p i {
+.footer-contact p i {
     width: 1.2em;
     text-align: center;
+    color: var(--muted);
 }
 
 /* Links stay regular weight, underline on hover */
-.site-footer a {
-    color: #0052a3;
-    font-weight: 400;
+.footer-contact a {
+    color: var(--blue);
     text-decoration: none;
 }
 
-.site-footer a:hover {
+.footer-contact a:hover {
     text-decoration: underline;
 }
 
-/* Media Query for Responsive Design (Mobile) */
+/* Tablet: accordion stacks, media drops under the open item */
+@media (max-width: 900px) {
+    .projects-card {
+        min-height: 0;
+    }
+
+    .project {
+        width: 100%;
+    }
+
+    .project-media {
+        position: static;
+        width: 100%;
+        transform: none;
+        margin-bottom: 1.6rem;
+    }
+
+    .favorites-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Phone */
 @media (max-width: 600px) {
-    .profile-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 2rem 1rem;
-        gap: 2em;
-    }
-    
-    .apple-section {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 3rem 1rem;
-    }
-    
     .top-nav {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.75rem;
     }
 
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 0.5rem 1.25rem;
     }
 
-    /* Center section titles and body text to match the centered bio above */
-    .section-title {
-        width: 100%;
-    }
-
-    .section-title h2 {
-        font-size: 1.8rem;
+    /* Hero stacks with the photo on top, centered */
+    .hero {
+        flex-direction: column-reverse;
         text-align: center;
+        gap: 2rem;
+        padding: 2.5rem 0 1.5rem;
+        min-height: 0;
     }
 
-    .section-body {
-        width: 100%;
-        text-align: center;
+    .bio-text {
+        min-width: 0;
     }
 
-    /* Centered paragraphs stay centered as a block when capped */
-    .bio-text p,
-    .section-body p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Hero is centered on mobile, so drop the desktop optical nudge */
+    /* Centered hero, so drop the desktop optical nudge */
     .bio-text h1 {
         margin-left: 0;
     }
 
-    /* Smaller type for small screens (body never drops below 16px) */
-    h1 {
-        font-size: 2.4rem;
+    .bio-sub {
+        margin: 0 auto;
     }
 
-    h2 {
-        font-size: 1.25rem;
-    }
-
-    p, figcaption {
-        font-size: 1rem;
-    }
-
-    /* Keep longer project descriptions left-aligned inside their cards for readability */
-    .apple-card {
-        padding: 1.5rem;
-        text-align: left;
+    /* Even line breaks so no single word is left alone */
+    .bio-text h1,
+    .bio-text h2 {
+        text-wrap: balance;
     }
 
     .profile-pic {
-        width: 300px;
+        width: 280px;
         max-width: 80%;
         padding: 1rem 0 0 0;
-        margin: 0 auto;
+    }
+
+    /* Section text stays left-aligned for readability (Module 7: avoid centered blocks) */
+    .card {
+        border-radius: 22px;
     }
 
     .favorites-list {
         grid-template-columns: 1fr;
     }
 
-    .site-footer {
+    .pdf-frame {
+        height: 22rem;
+    }
+
+    .footer-card {
         flex-direction: column;
+        align-items: flex-start;
         gap: 1.5rem;
     }
 
     .footer-icon {
-        width: 90px;
-        height: 90px;
+        width: 72px;
+        height: 72px;
     }
 
-    .footer-contact {
-        text-align: center;
-    }
+    /* Body text keeps its desktop size on phones (readings: same or larger on small screens, 16-18px) */
 
-    .site-footer p {
-        justify-content: center;
-        flex-wrap: wrap;
+    /* Hero intro: keep phone lines within 30-40 characters */
+    .bio-sub {
+        max-width: 20rem;
     }
 }
