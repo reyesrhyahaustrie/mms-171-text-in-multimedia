@@ -16,8 +16,11 @@ This repository contains files for **MMS 171: Text in Multimedia** at the Univer
 ## Tech Stack & Tools
 
 * **HTML5:** Semantic structuring and content layout (`<header>`, `<main>`, `<section>`, `<footer>`).
-* **CSS3:** *(Upcoming in Unit 3)* Styling, visual hierarchy, and responsive design.
-* **Typography:** Google Fonts (Inter for Headings, Raleway for Body Text).
+* **CSS3:** Styling, visual hierarchy, Flexbox/Grid layout, and responsive design.
+* **Typography:** Google Fonts
+  * **Headings:** Raleway (600, 700) with fallbacks `"Trebuchet MS", "Century Gothic", Arial, sans-serif`
+  * **Body:** Inter (400, 500, 600) with fallbacks `"Helvetica Neue", Helvetica, Arial, sans-serif`
+* **Design:** Canva (Module 7 typography style guide).
 * **Deployment:** GitHub Pages.
 
 ## Course Progression Tracker
@@ -29,7 +32,7 @@ This project is built across the term.
 * [x] **Unit 2 (Module 4):** XHTML & HTML5
 * [x] **Unit 2 (Module 5):** Metalanguages, SGML and XML
 * [x] **Unit 3 (Module 6):** CSS
-* [ ] **Unit 3 (Module 7):** Digital Typography
+* [x] **Unit 3 (Module 7):** Digital Typography
 * [ ] **Unit 4 (Weeks 8-10):** Putting It All Together - Final polishing, integrating knowledge checks, and live deployment
 
 ## Live Site
@@ -38,4 +41,4 @@ This project is built across the term.
 
 ## Academic Integrity Disclaimer
 
-This project is developed solely for academic purposes in compliance with UPOU's academic integrity and anti-plagiarism guidelines. All external assets, tools, and code references (e.g., W3Schools, W3C Markup Validator, Google Fonts) are properly attributed.
+This project is developed solely for academic purposes in compliance with UPOU's academic integrity and anti-plagiarism guidelines. All external assets, tools, and code references (e.g., W3Schools, W3C Markup Validator, Google Fonts, WebAIM Contrast Checker) are properly attributed.
