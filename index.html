@@ -1,11 +1,12 @@
 <!-- 
 ========================================================================
 University of the Philippines Open University
-MMS 171 - Module 6: CSS
+MMS 171 - Module 7: Digital Typography
 STUDENT: REYES, Rhyah Austrie S.
 
-HTML skeleton updated for Module 6. Includes external CSS link, 
-structural classes for Flexbox layout, and removed inline widths.
+Module 7 loads two Google Fonts (Raleway for headings,
+Inter for body text) via <link> with preconnect hints. Font families
+and web-safe fallbacks which are declared in style.css.
 ========================================================================
 -->
 <!DOCTYPE html>
@@ -14,6 +15,12 @@ structural classes for Flexbox layout, and removed inline widths.
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rhyah Austrie Reyes | Profile</title>
+
+    <!-- Google Fonts: Raleway (headings) + Inter (body). display=swap shows fallback text while fonts load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Raleway:wght@600;700&display=swap">
+
     <link rel="stylesheet" href="style.css" />
     
     <!-- FontAwesome CDN for Brand Icons (GitHub, LinkedIn) -->
@@ -90,7 +97,7 @@ structural classes for Flexbox layout, and removed inline widths.
             </div>
         </section>
 
-    <!-- Section 4: Passion Projects -->
+        <!-- Section 4: Passion Projects -->
         <section id="projects" class="apple-section">
             <div class="section-title">
                 <h2>Passion Projects.</h2>
@@ -111,7 +118,7 @@ structural classes for Flexbox layout, and removed inline widths.
 
                 <div class="project-item apple-card">
                     <h3>Customer Churn Prediction Analysis</h3>
-                    <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" class="pdf-frame" allow="autoplay"></iframe>
+                    <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" title="Customer Churn Prediction Analysis report" class="pdf-frame" allow="autoplay"></iframe>
                     <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
                 </div>
 
