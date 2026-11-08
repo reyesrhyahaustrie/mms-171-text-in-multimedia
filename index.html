@@ -106,7 +106,9 @@ and web-safe fallbacks which are declared in style.css.
 
                 <div class="project-card">
                     <h3>Visual Profile Video Project</h3>
-                    <iframe src="https://www.youtube.com/embed/vEVywyuoaUs" title="Visual Profile Video Project" class="video-frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <video src="assets/visual-profile-video.mp4" class="video-frame" controls preload="metadata" aria-label="Visual Profile Video Project">
+                        <p>Your browser does not support embedded video. <a href="assets/visual-profile-video.mp4">Download the Visual Profile Video (MP4)</a>.</p>
+                    </video>
                     <p>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</p>
                 </div>
 
@@ -118,7 +120,9 @@ and web-safe fallbacks which are declared in style.css.
 
                 <div class="project-card">
                     <h3>Customer Churn Prediction Analysis</h3>
-                    <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" title="Customer Churn Prediction Analysis report" class="pdf-frame" allow="autoplay"></iframe>
+                    <object data="assets/project-churn-analysis.pdf" type="application/pdf" class="pdf-frame" aria-label="Customer Churn Prediction Analysis report">
+                        <p>Your browser cannot display this PDF. <a href="assets/project-churn-analysis.pdf">Open the Customer Churn Prediction Analysis report (PDF)</a>.</p>
+                    </object>
                     <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
                 </div>
 
