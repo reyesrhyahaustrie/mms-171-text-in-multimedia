@@ -17,10 +17,10 @@ and web-safe fallbacks which are declared in style.css.
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rhyah Austrie Reyes | Profile</title>
 
-    <!-- Google Fonts: Raleway (headings) + Inter (body). display=swap shows fallback text while fonts load -->
+    <!-- Google Fonts: Raleway (headings) + Inter (body), display=swap shows fallback text while fonts load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Raleway:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Raleway:wght@600;700&display=swap">
 
     <link rel="stylesheet" href="style.css" />
 
@@ -50,11 +50,8 @@ and web-safe fallbacks which are declared in style.css.
     <header id="home" class="hero">
         <div class="bio-text">
             <h1>Rhyah Austrie Reyes</h1>
-            <!-- Wrapper sizes to the subtitle, so the intro paragraph wraps at the same right edge -->
-            <div class="bio-sub">
-                <h2>Multimedia Studies Student &amp; Tech Enthusiast</h2>
-                <p>A student at UPOU in her senior year who loves learning new things and turning ideas into making an impact.</p>
-            </div>
+            <h2>Multimedia Studies Student &amp; Tech Enthusiast</h2>
+            <p>A student at UPOU in her senior year who loves learning new things and turning ideas into making an impact.</p>
         </div>
         <img src="assets/profile.png" alt="Rhyah Austrie Reyes Profile Picture" class="profile-pic"/>
     </header>
@@ -99,43 +96,31 @@ and web-safe fallbacks which are declared in style.css.
             </div>
         </section>
 
-        <!-- Section 4: Passion Projects (accordion: only one open at a time via the shared name attribute) -->
-        <section id="projects" class="block">
-            <div class="block-head">
+        <!-- Section 4: Passion Projects -->
+        <section id="projects" class="projects-block">
+            <div class="projects-head">
                 <h2 class="block-title">Passion Projects.</h2>
                 <a href="https://github.com/reyesrhyahaustrie" target="_blank" class="block-link">See more on GitHub &rsaquo;</a>
             </div>
-            <div class="card projects-card">
+            <div class="projects-list">
 
-                <details class="project" name="project" open>
-                    <summary><h3>Visual Profile Video</h3></summary>
-                    <div class="project-body">
-                        <p>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</p>
-                    </div>
-                    <div class="project-media">
-                        <iframe src="https://www.youtube.com/embed/vEVywyuoaUs" title="Visual Profile Video Project" class="video-frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </details>
+                <div class="project-card">
+                    <h3>Visual Profile Video Project</h3>
+                    <iframe src="https://www.youtube.com/embed/vEVywyuoaUs" title="Visual Profile Video Project" class="video-frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Produced and edited a grayscale visual profile featuring an A-roll interview with B-roll documentation and voiceover integration for MMS 175: Videography in Multimedia.</p>
+                </div>
 
-                <details class="project" name="project">
-                    <summary><h3>NovaTech Revenue Dashboard</h3></summary>
-                    <div class="project-body">
-                        <p>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="assets/dashboard-data.png" alt="NovaTech Dashboard Backend Data" class="project-img"/>
-                    </div>
-                </details>
+                <div class="project-card">
+                    <h3>NovaTech Revenue Intelligence Dashboard</h3>
+                    <img src="assets/dashboard-data.png" alt="NovaTech Dashboard Backend Data" class="project-img"/>
+                    <p>Developed a Business Intelligence dashboard using Amazon QuickSight that aggregates raw data from CRM deals, marketing campaigns, and support tickets to provide visibility into the marketing funnel, sales pipeline, and customer health.</p>
+                </div>
 
-                <details class="project" name="project">
-                    <summary><h3>Customer Churn Prediction</h3></summary>
-                    <div class="project-body">
-                        <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
-                    </div>
-                    <div class="project-media">
-                        <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" title="Customer Churn Prediction Analysis report" class="pdf-frame" allow="autoplay"></iframe>
-                    </div>
-                </details>
+                <div class="project-card">
+                    <h3>Customer Churn Prediction Analysis</h3>
+                    <iframe src="https://drive.google.com/file/d/1qEk2yoTIg8IuAVpJP_P-e4iX0ZorVY4Z/preview" title="Customer Churn Prediction Analysis report" class="pdf-frame" allow="autoplay"></iframe>
+                    <p>For GCI Omnicampus April 2026 intake, where SQL queries has been written to extract data, filter results, and run data quality checks on large datasets. Built a customer churn prediction model to find trends and make a data report based on the results.</p>
+                </div>
 
             </div>
         </section>

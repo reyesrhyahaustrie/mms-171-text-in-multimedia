@@ -8,30 +8,18 @@ External CSS stylesheet for the personal profile page.
 Has typography, colors, Box Model spacing, Flexbox/Grid layout,
 and responsive media queries.
 
-Module 7 Typography
-- Headings: Raleway (Google Font) -> Trebuchet MS -> Century Gothic -> Arial -> sans-serif
-- Body:     Inter   (Google Font) -> Helvetica Neue -> Helvetica -> Arial -> sans-serif
-Fonts are loaded in index.html. Sizes use rem/clamp so text scales with
-browser zoom and screen width. Body text never drops below 16px.
+Module 7 Typography (Google Fonts are loaded in index.html):
+- Headings: Raleway -> Trebuchet MS -> Century Gothic -> Arial -> sans-serif
+- Body:     Inter   -> Helvetica Neue -> Helvetica -> Arial -> sans-serif
+Sizes use rem so text scales with browser zoom. Body text never drops below 16px.
+
+Colors:
+#0052a3 Deep Blue (name, links)    #1d1d1f Ink (headings)
+#424245 Graphite (body text)       #6e6e73 Muted (small labels)
+#f5f5f7 Mist (cards)               #d2d2d7 Line (dividers)
+#ffffff White (page)
 ========================================================================
 */
-
-/* Design tokens: fonts and colors defined once */
-:root {
-    --font-heading: "Raleway", "Trebuchet MS", "Century Gothic", Arial, sans-serif;
-    --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-    --ink: #1d1d1f;        /* headings */
-    --graphite: #424245;   /* body text */
-    --muted: #6e6e73;      /* subtitles, captions */
-    --blue: #0052a3;       /* name, links */
-    --mist: #f5f5f7;       /* cards */
-    --line: #d2d2d7;       /* dividers */
-    --white: #ffffff;      /* page */
-
-    --card-radius: 28px;
-    --card-pad: clamp(1.75rem, 5vw, 4.5rem);
-}
 
 /* Base Styles & Typography */
 html {
@@ -39,40 +27,35 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
-    font-size: 1rem;      /* 16px base, the accessible minimum for body text */
-    line-height: 1.6;     /* within the recommended 1.4-1.6x leading */
-    color: var(--ink);
-    background-color: var(--white);
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;      /* 16px base, accessible minimum for body text */
+    line-height: 1.6;
+    color: #1d1d1f;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 {
-    font-family: var(--font-heading);
+    font-family: "Raleway", "Trebuchet MS", "Century Gothic", Arial, sans-serif;
     line-height: 1.15;
     font-weight: 600;
-    color: var(--ink);
-    /* Raleway defaults to old-style numerals; force lining numbers for clarity */
-    font-variant-numeric: lining-nums;
+    color: #1d1d1f;
 }
 
 p, figcaption {
     font-size: 1.05rem;
-    color: var(--graphite);
+    color: #424245;
 }
 
 /* Scroll margin so the sticky nav doesn't cover titles when clicked */
 header, section, footer {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 56px;
 }
 
-/* Navigation Bar: frosted white glass */
+/* Navigation Bar */
 .top-nav {
-    background-color: rgba(255, 255, 255, 0.72);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     padding: 0.9rem 5%;
     position: sticky;
@@ -99,16 +82,14 @@ header, section, footer {
 
 .nav-links li a {
     text-decoration: none;
-    color: var(--ink);
+    color: #1d1d1f;
     font-size: 0.95rem;
     font-weight: 500;
-    opacity: 0.85;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .nav-links li a:hover {
-    color: var(--blue);
-    opacity: 1;
+    color: #0052a3;
 }
 
 /* Shared page width (Box Model) */
@@ -126,10 +107,10 @@ header, section, footer {
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    padding: 6rem 0 4rem;
-    min-height: 60vh;
+    padding: 6rem 0 19vh;
+    min-height: 90vh;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--line); /* Divider between the banner and About Me */
+    border-bottom: 1px solid #d2d2d7; /* Divider between the banner and About Me */
 }
 
 .bio-text {
@@ -138,53 +119,44 @@ header, section, footer {
 }
 
 .bio-text h1 {
-    /* Scales between 2.4rem and 3.6rem with the screen so the name never breaks awkwardly */
-    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-size: 3.6rem;
     font-weight: 700;
-    color: var(--blue);
+    color: #0052a3;
     letter-spacing: -0.02em;
     line-height: 1.1;
     margin: 0 0 1.1rem;
-    /* Large Raleway caps sit slightly right of smaller text; nudge back for optical alignment */
+    /* Large Raleway capitals sit slightly to the right of smaller text; nudge back so the left edges line up */
     margin-left: -0.04em;
 }
 
-/* Subtitle: bold and dark, sized so it ends close to the name's right edge */
 .bio-text h2 {
-    font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+    font-size: 1.6rem;
     font-weight: 600;
-    color: var(--graphite);
+    color: #424245;
     letter-spacing: -0.01em;
     margin: 0 0 1.1rem;
 }
 
-/* Subtitle sets the width; the paragraph wraps at the same right edge ("Enthusiast") */
-.bio-sub {
-    width: fit-content;
-    max-width: 100%;
-}
-
-.bio-sub p {
-    width: 0;
-    min-width: 100%;
+.bio-text p {
+    max-width: 34rem;
     margin: 0;
 }
 
-/* Profile picture: arch window on a soft gray panel, blue glow underneath */
+/* Profile Picture is an arch window on a soft gray panel, blue glow underneath */
 .profile-pic {
     width: 400px;
     max-width: 40%;
     height: auto;
     box-sizing: border-box;
     padding: 1.5rem 0 0 0;
-    background-color: var(--mist);
+    background-color: #f5f5f7;
     border-radius: 50% 50% 20px 20px;
     box-shadow: 0 24px 40px -14px rgba(0, 82, 163, 0.4);
     object-fit: contain;
     object-position: bottom;
 }
 
-/* Section blocks: big title on white, content inside a rounded card */
+/* Section Blocks are big title on white, content inside a rounded card */
 .block {
     padding: 2.5rem 0;
 }
@@ -199,14 +171,14 @@ header, section, footer {
 }
 
 .block-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: 3rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin: 0;
 }
 
 .block-link {
-    color: var(--blue);
+    color: #0052a3;
     text-decoration: none;
     font-size: 1.05rem;
 }
@@ -216,18 +188,22 @@ header, section, footer {
 }
 
 .card {
-    background: var(--mist);
-    border-radius: var(--card-radius);
-    padding: var(--card-pad);
+    background-color: #f5f5f7;
+    border-radius: 28px;
+    padding: 4rem;
 }
 
-/* About Me: no card. Title on the left, text on the right, divider lines above and below */
+/* About Me has no card. Title on the left, text on the right, divider lines above and below */
 .about-block {
     display: flex;
     align-items: baseline;
     gap: 3rem;
     padding: 4rem 0;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #d2d2d7;
+    min-height: 100vh;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .about-block .block-title {
@@ -236,33 +212,32 @@ header, section, footer {
 }
 
 .about-text .lead {
-    font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    font-family: "Raleway", "Trebuchet MS", "Century Gothic", Arial, sans-serif;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.3;
-    color: var(--ink);
-    max-width: 30ch;
-    text-wrap: balance;
+    color: #1d1d1f;
+    max-width: 32rem;
     margin: 0 0 1rem;
 }
 
-.about-text p:last-child {
-    max-width: 60ch;
+.about-text p {
+    max-width: 38rem;
     margin: 0;
 }
 
-/* Things I Love: Grid of white tiles inside the card */
+/* Things I Love are grid of white tiles inside the card */
 .favorites-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
 
 .favorites-list li {
-    background: var(--white);
+    background-color: #ffffff;
     padding: 1rem 1rem 1.25rem;
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -286,9 +261,9 @@ header, section, footer {
 }
 
 .fav-num {
-    font-family: var(--font-heading);
+    font-family: "Raleway", "Trebuchet MS", "Century Gothic", Arial, sans-serif;
     font-weight: 700;
-    color: var(--blue);
+    color: #0052a3;
 }
 
 .responsive-img {
@@ -299,86 +274,52 @@ header, section, footer {
     margin: 0 0 1rem;
 }
 
-/* Passion Projects: accordion on the left, open item's media on the right */
-.projects-card {
-    position: relative;
-    /* Tight top/bottom padding; the height follows the accordion content,
-       with just enough minimum room for the tallest media (the 22rem PDF) */
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    min-height: 25rem;
+/* Passion Projects are title on the left, project cards on the right */
+.projects-block {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    padding: 4rem 0;
+    border-top: 1px solid #d2d2d7;
 }
 
-.project {
-    width: 44%;
-    border-bottom: 1px solid var(--line);
-}
-
-.project:last-child {
-    border-bottom: 0;
-}
-
-.project summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.6rem 0;
-}
-
-/* Hide the default triangle marker */
-.project summary::-webkit-details-marker {
-    display: none;
-}
-
-.project summary h3 {
-    font-size: clamp(1.25rem, 1.9vw, 1.5rem);
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Chevron: down when closed, up when open */
-.project summary::after {
-    content: "";
+.projects-head {
+    width: 30%;
     flex-shrink: 0;
-    width: 0.65rem;
-    height: 0.65rem;
-    border-right: 2px solid var(--muted);
-    border-bottom: 2px solid var(--muted);
-    transform: translateY(-25%) rotate(45deg);
-    transition: transform 0.25s ease;
 }
 
-.project[open] summary::after {
-    transform: translateY(25%) rotate(-135deg);
+.projects-head .block-link {
+    display: inline-block;
+    margin-top: 0.75rem;
 }
 
-.project summary:hover h3 {
-    color: var(--blue);
+.projects-list {
+    flex: 1;
+    min-width: 0;
 }
 
-.project summary:focus-visible {
-    outline: 2px solid var(--blue);
-    outline-offset: 4px;
-    border-radius: 6px;
+.project-card {
+    background-color: #f5f5f7;
+    border-radius: 20px;
+    padding: 2.75rem 4.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.project-body p {
-    margin: 0 0 1.6rem;
+.project-card:last-child {
+    margin-bottom: 0;
 }
 
-/* Media of the open project floats in the right half of the card (desktop) */
-.project-media {
-    position: absolute;
-    top: 50%;
-    right: var(--card-pad);
-    width: calc(50% - var(--card-pad));
-    transform: translateY(-50%);
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 1.25rem;
+}
+
+.project-card p {
+    font-size: 1.125rem;
+    margin: 1.25rem 0 0;
+    text-align: justify;
+    hyphens: auto;
 }
 
 .video-frame {
@@ -399,11 +340,11 @@ header, section, footer {
 
 .pdf-frame {
     width: 100%;
-    height: 22rem;
+    height: 26rem;
     display: block;
     border: 0;
     border-radius: 16px;
-    background: var(--white);
+    background-color: #ffffff;
 }
 
 /* Footer: contact card */
@@ -424,7 +365,7 @@ header, section, footer {
 }
 
 .footer-contact h2 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin: 0 0 1rem;
@@ -442,12 +383,12 @@ header, section, footer {
 .footer-contact p i {
     width: 1.2em;
     text-align: center;
-    color: var(--muted);
+    color: #6e6e73;
 }
 
 /* Links stay regular weight, underline on hover */
 .footer-contact a {
-    color: var(--blue);
+    color: #0052a3;
     text-decoration: none;
 }
 
@@ -455,30 +396,39 @@ header, section, footer {
     text-decoration: underline;
 }
 
-/* Tablet: accordion stacks, media drops under the open item */
+/* Tablet */
 @media (max-width: 900px) {
-    .projects-card {
-        min-height: 0;
+    .bio-text h1 {
+        font-size: 2.8rem;
     }
 
-    .project {
-        width: 100%;
+    .block-title {
+        font-size: 2.4rem;
     }
 
-    .project-media {
-        position: static;
-        width: 100%;
-        transform: none;
-        margin-bottom: 1.6rem;
+    .about-text .lead {
+        font-size: 1.6rem;
+    }
+
+    .card {
+        padding: 2.5rem;
+    }
+
+    .project-card {
+        padding: 2rem;
     }
 
     .favorites-list {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 /* Phone */
 @media (max-width: 600px) {
+    header, section, footer {
+        scroll-margin-top: 120px;
+    }
+
     .top-nav {
         flex-direction: column;
         gap: 0.75rem;
@@ -496,26 +446,26 @@ header, section, footer {
         text-align: center;
         gap: 2rem;
         padding: 2.5rem 0 1.5rem;
-        min-height: 0;
+        justify-content: center;
     }
 
     .bio-text {
         min-width: 0;
     }
 
-    /* Centered hero, so drop the desktop optical nudge */
     .bio-text h1 {
+        font-size: 2.4rem;
         margin-left: 0;
     }
 
-    .bio-sub {
-        margin: 0 auto;
+    .bio-text h2 {
+        font-size: 1.3rem;
     }
 
-    /* Even line breaks so no single word is left alone */
-    .bio-text h1,
-    .bio-text h2 {
-        text-wrap: balance;
+    /* Phone lines within 30-40 characters, centered under the subtitle */
+    .bio-text p {
+        max-width: 20rem;
+        margin: 0 auto;
     }
 
     .profile-pic {
@@ -524,9 +474,11 @@ header, section, footer {
         padding: 1rem 0 0 0;
     }
 
-    /* About Me stacks: title above text */
+    /* About Me stacks are title above text */
     .about-block {
         flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
         gap: 1rem;
         padding: 3rem 0;
     }
@@ -535,9 +487,40 @@ header, section, footer {
         width: auto;
     }
 
-    /* Section text stays left-aligned for readability (Module 7: avoid centered blocks) */
+    .about-text .lead {
+        font-size: 1.4rem;
+    }
+
+    .about-text p {
+        max-width: 20rem;
+    }
+
+    .block-title {
+        font-size: 2rem;
+    }
+
     .card {
+        padding: 1.75rem;
         border-radius: 22px;
+    }
+
+    /* Passion Projects stacks are title above the cards */
+    .projects-block {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 3rem 0;
+    }
+
+    .projects-head {
+        width: auto;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.25rem;
     }
 
     .favorites-list {
@@ -559,10 +542,7 @@ header, section, footer {
         height: 72px;
     }
 
-    /* Body text keeps its desktop size on phones (readings: same or larger on small screens, 16-18px) */
-
-    /* Hero intro: keep phone lines within 30-40 characters */
-    .bio-sub {
-        max-width: 20rem;
+    .footer-contact h2 {
+        font-size: 1.6rem;
     }
 }
