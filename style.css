@@ -101,7 +101,7 @@ header, section, footer {
     margin: 0 auto;
 }
 
-/* Hero: Flexbox, text left, photo right */
+/* Hero is a Flexbox, text left, photo right */
 .hero {
     display: flex;
     align-items: center;
@@ -125,7 +125,6 @@ header, section, footer {
     letter-spacing: -0.02em;
     line-height: 1.1;
     margin: 0 0 1.1rem;
-    /* Large Raleway capitals sit slightly to the right of smaller text; nudge back so the left edges line up */
     margin-left: -0.04em;
 }
 
@@ -142,7 +141,7 @@ header, section, footer {
     margin: 0;
 }
 
-/* Profile Picture is an arch window on a soft gray panel, blue glow underneath */
+/* Profile Picture is an arch window on a soft gray panel and a blue glow underneath */
 .profile-pic {
     width: 400px;
     max-width: 40%;
@@ -318,8 +317,6 @@ header, section, footer {
 .project-card p {
     font-size: 1.125rem;
     margin: 1.25rem 0 0;
-    text-align: justify;
-    hyphens: auto;
 }
 
 .video-frame {
