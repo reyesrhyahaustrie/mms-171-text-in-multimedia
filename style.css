@@ -14,9 +14,12 @@ Module 7 Typography (Google Fonts are loaded in index.html):
 Sizes use rem so text scales with browser zoom. Body text never drops below 16px.
 
 Colors:
-#0052a3 Deep Blue (name, links)    #1d1d1f Ink (headings)
-#424245 Graphite (body text)       #6e6e73 Muted (small labels)
-#f5f5f7 Mist (cards)               #d2d2d7 Line (dividers)
+#0052a3 Deep Blue (name, links)    
+#1d1d1f Ink (headings)
+#424245 Graphite (body text)       
+#6e6e73 Muted (small labels)
+#f5f5f7 Mist (cards)               
+#d2d2d7 Line (dividers)
 #ffffff White (page)
 ========================================================================
 */
@@ -28,7 +31,7 @@ html {
 
 body {
     font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 1rem;      /* 16px base, accessible minimum for body text */
     line-height: 1.6;
     color: #1d1d1f;
     background-color: #ffffff;
@@ -101,7 +104,7 @@ header, section, footer {
     margin: 0 auto;
 }
 
-/* Hero is a Flexbox, text left, photo right */
+/* Hero: Flexbox, text left, photo right */
 .hero {
     display: flex;
     align-items: center;
@@ -141,7 +144,7 @@ header, section, footer {
     margin: 0;
 }
 
-/* Profile Picture is an arch window on a soft gray panel and a blue glow underneath */
+/* Profile Picture is an arch window on a soft gray panel, blue glow underneath */
 .profile-pic {
     width: 400px;
     max-width: 40%;
@@ -481,7 +484,8 @@ header, section, footer {
     }
 
     .about-block .block-title {
-        width: auto;
+        width: 100%;
+        text-align: center;
     }
 
     .about-text .lead {
@@ -492,8 +496,29 @@ header, section, footer {
         max-width: 20rem;
     }
 
+    .about-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-text .lead,
+    .about-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .favorites-list figcaption {
+        display: block;
+        text-align: center;
+    }
+
     .block-title {
         font-size: 2rem;
+    }
+
+    .block-head {
+        justify-content: center;
+        text-align: center;
     }
 
     .card {
@@ -509,7 +534,8 @@ header, section, footer {
     }
 
     .projects-head {
-        width: auto;
+        width: 100%;
+        text-align: center;
     }
 
     .project-card {
@@ -530,8 +556,16 @@ header, section, footer {
 
     .footer-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 1.5rem;
+    }
+
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-contact p {
+        justify-content: center;
     }
 
     .footer-icon {
