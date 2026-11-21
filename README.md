@@ -33,7 +33,7 @@ This project is built across the term.
 * [x] **Unit 2 (Module 5):** Metalanguages, SGML and XML
 * [x] **Unit 3 (Module 6):** CSS
 * [x] **Unit 3 (Module 7):** Digital Typography
-* [ ] **Unit 4 (Weeks 8-10):** Putting It All Together - Final polishing, integrating knowledge checks, and live deployment
+* [x] **Unit 4 (Weeks 9):** Putting It All Together - Final polishing, integrating knowledge checks, and live deployment
 
 ## Live Site
 
